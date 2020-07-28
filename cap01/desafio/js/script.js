@@ -1,5 +1,5 @@
 let allUsers = [];
-let allUsersFiltred = [];
+let usersMapped = [];
 let btnSearch = null;
 let tabUsers = null;
 let tabStatistic = null;
@@ -41,7 +41,7 @@ async function fetchUsers() {
     };
   });
 
-  allUsersFiltred = allUsers;
+  usersMapped = allUsers;
   render();
 }
 
@@ -54,7 +54,7 @@ function render() {
 function renderUserList() {
   let usersHTML = "<div class='users'>";
 
-  allUsersFiltred.forEach((user, index) => {
+  usersMapped.forEach((user, index) => {
     const { id, name, gender, age, picture } = user;
 
     const userHTML = `
@@ -80,7 +80,7 @@ function renderUserStatistic() {
         <div>          
           <span>Sexo masculino: ${countGender('male')}</span><br />
           <span>Sexo feminino: ${countGender('female')}</span><br />
-          <span>Soma das idades: ${countAges()}</span><br />
+          <span>Soma das idades: ${sumAges()}</span><br />
           <span>Média das idades: ${averageAges()}</span><br />
         </div>
       </div>
@@ -92,15 +92,15 @@ function renderUserStatistic() {
 }
 
 function countGender(gender) {
-  const filter = allUsersFiltred.filter(user => {
+  const filter = usersMapped.filter(user => {
     return user.gender === gender;
   });
 
   return filter.length;
 }
 
-function countAges() {
-  const totalAges = allUsersFiltred.reduce((accumulator, user) => {
+function sumAges() {
+  const totalAges = usersMapped.reduce((accumulator, user) => {
     return accumulator + user.age;
   }, 0);
 
@@ -108,18 +108,18 @@ function countAges() {
 }
 
 function averageAges() {
-  let media = countAges() / allUsersFiltred.length;
+  let media = sumAges() / usersMapped.length;
   return media.toFixed(2);
 }
 
 function renderSummary() {
-  countUsers.textContent = allUsersFiltred.length;
+  countUsers.textContent = usersMapped.length;
 }
 
 function searchUser(e) {
-  allUsersFiltred = allUsers.filter(user => user.name.toLowerCase().trim().indexOf(inputName.value.toLowerCase().trim()) > -1);
+  usersMapped = allUsers.filter(user => user.name.toLowerCase().trim().indexOf(inputName.value.toLowerCase().trim()) > -1);
 
-  allUsersFiltred.sort((a, b) => {
+  usersMapped.sort((a, b) => {
     return a.name.localeCompare(b.name);
   });
 
