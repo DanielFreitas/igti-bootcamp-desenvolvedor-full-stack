@@ -1,0 +1,25 @@
+.fontSize {
+    font-size: 16px !important;
+}
+
+.text {
+    font-weight: bold;
+}
+
+
+.textGreen {
+    color:#16a085;
+}
+
+.textOrange {
+    color:#e67e22;
+}
+
+.textRed {
+    color:rgb(255, 69, 0);
+}
+
+.inputMargin {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
