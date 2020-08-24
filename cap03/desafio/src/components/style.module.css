@@ -1,0 +1,23 @@
+.table {
+    border:1px solid #A9A9A9;
+}
+
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 0.875rem;
+}
+
+table { 
+    border: 1px solid #ddd;
+    border-collapse: separate;
+    border-left: 0;
+    border-radius: 4px;
+    border-spacing: 0px;
+}
+
+.padding{
+    padding: 10px;
+    margin-bottom: 8px;
+}
