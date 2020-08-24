@@ -21,7 +21,7 @@ function App() {
   }, [valuesToCalculateInterest]);
 
   return (
-    <div className={`${css.back} container`}>
+    <div className={css.container}>
       <h3 className={css.title}>React - Juros Compostos</h3>
 
       <div className="row">
