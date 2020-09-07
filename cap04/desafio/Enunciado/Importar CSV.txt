@@ -1,0 +1,19 @@
+1 - Baixar o MongoDB Database Tools
+https://www.mongodb.com/try/download/database-tools?tck=docs_databasetools
+
+2 - Colocar o CSV "grades.csv" na pasta BIN:
+C:\Users\Daniel\Downloads\mongodb-database-tools-windows-x86_64-100.1.1\mongodb-database-tools-windows-x86_64-100.1.1\bin
+
+3 - Abrir o prompt Windows no diretório BIN do MongoDB Database Tools e rodar o comando:
+mongoimport --host clusterbootcampigti-shard-00-01.zdgzr.mongodb.net:27017 --ssl -u admin -p senhaAqui --authenticationDatabase admin  --db grades --collection grade --type csv --file grades.csv --headerline
+
+Resultado:
+2020-09-06T16:58:46.027-0300    connected to: mongodb://clusterbootcampigti-shard-00-01.zdgzr.mongodb.net:27017/
+2020-09-06T16:58:46.348-0300    27 document(s) imported successfully. 0 document(s) failed to import.
+
+OBSERVAÇÃO:
+- Endereço do meu Cluster primário: clusterbootcampigti-shard-00-01.zdgzr.mongodb.net:27017
+- Ao rodar o comando a collection student é criada
+
+EXEMPLO:
+https://www.youtube.com/watch?v=tpz-6Trd1UI
