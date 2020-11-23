@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de cores</title>
+    <link rel="shortcut icon" href="" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td>(R)</td>
+            <td>Vermelho:</td>
+            <td>
+              <input type="range" id="sliderRed" min="0" max="255" class="input-range" value="0" />
+            </td>
+            <td>
+              <input type="text" id="textboxRed" class="output-value" disabled="disabled" />
+            </td>
+          </tr>
+          <tr>
+            <td>(G)</td>
+            <td>Verde:</td>
+            <td>
+              <input type="range" id="sliderGreen" min="0" max="255" class="input-range" value="0" />
+            </td>
+            <td>
+              <input type="text" id="textboxGreen" class="output-value" disabled="disabled" />
+            </td>
+          </tr>
+          <tr>
+            <td>(B)</td>
+            <td>Azul:</td>
+            <td>
+              <input type="range" id="sliderBlue" min="0" max="255" class="input-range" value="0" />
+            </td>
+            <td>
+              <input type="text" id="textboxBlue" class="output-value" disabled="disabled" />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td><div id="divColor"></div></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <input type="text" id="textZoado" class="desgraca-de-vscode" value="Kkkkkkkkkkkkkkkkkkkkkkkk" />
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

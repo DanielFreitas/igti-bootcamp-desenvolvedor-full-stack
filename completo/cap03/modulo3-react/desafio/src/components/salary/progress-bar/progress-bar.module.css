@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.square {
+  float: left;
+  height: 20px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  text-align: center;
+  line-height: normal;
+  color: rgb(250, 249, 249);
+  font-size: 13px; 
+
+}
+
+.squareGreen {
+  background:#16a085;
+  width: 100px;
+}
+
+.squareOrange {
+  background:#e67e22;
+  width: 100px;
+}
+
+.barColorRed {
+  background:rgb(255, 69, 0);
+  width: 100px;
+}
+
+.labelBar {
+  margin-left: 20px;
+}
+
+.bar {
+
+  height: 10px;
+  border-radius: 10px;
+  background-color: #b3b3b3;
+  color: white;
+  text-align: center;
+
+  margin-left: 20px;
+  margin-right: 20px;
+
+}

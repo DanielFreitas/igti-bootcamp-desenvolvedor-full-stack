@@ -1,0 +1,70 @@
+-- start criando diretorio base
+mongod --dbpath="c:\igti\data"
+
+-- ligar o server
+mongo -host localhost:27017
+
+-- mostrar databases
+show dbs
+
+-- mostrar database onde estou
+db
+
+-- criar database
+use grades
+
+-- drop database
+db.dropDatabase()
+
+-- criar coleção
+db.createCollection(name,options)
+
+-- mostrar coleção
+show collections
+
+-- drop coleção
+db.COLLECTION.drop()
+
+-- insert um documento (retorna o objectId)
+db.student.insertOne({name:"Maria dos Anjos"});
+
+-- insert muitos documentos (retorna o objectId)
+db.student.insertMany([{name:"Joao Antonio", subject: "Matematica", type: "Trabalho Pratico", value: 15.4},{name:"Marco Aurelio", subject: "Matematica", type: "Trabalho Pratico", value: 15.4},{name:"Ana Julia", subject: "Matematica", type: "Prova Final", value: 23.8}])
+
+-- insert um ou mais documentos (não retorna o objectId)
+db.student.insert({name:"Pedro", subject: "Historia"});
+
+db.student.insert([{name:"Claudia Romualdo", subject: "Quimica", type: "Prova Final", value: 28.5},{name:"Pedro Augusto", subject: "Historia", type: "Trabalho Pratico", value: 17.5}]);
+
+-- select consulta
+db.student.find(query, projection);
+SEM FILTROS
+db.student.find({},{_id:0, name:1, value: 1});
+db.student.find({},{_id:0, name:1, value: 1}).limit(4); limitando
+db.student.find({},{_id:0, name:1, value: 1}).limit(4).skip(1); limitando e pulando 1 registro
+db.student.find({},{_id:0, name:1, value: 1}).sort({name:1}); ordenação
+db.student.find().pretty(); organizado
+db.student.findOne(); retorna o primeiro
+
+COM FILTROS
+db.student.find({subject: "Historia"},{_id:0}).pretty();
+db.student.find({$and:[{subject: "Matematica"},{type: "Trabalho Pratico"}]},{_id:0}).pretty();
+db.student.find({$nor:[{subject: "Matematica"},{type: "Trabalho Pratico"}]},{_id:0}).pretty();
+db.student.find({$or:[{subject: "Matematica"},{type: "Trabalho Pratico"}]},{_id:0}).pretty();
+
+COMPARACAO
+$eq    equal
+$gt    gratter than
+$gte   gratter than or equal
+$in    in
+$lt    less than
+$lte   less than or equal
+$ne    not equal
+$nin   not in
+
+db.student.find({value: {$gt:20}},{_id:0}).pretty();
+db.student.find({value: {$lt:20}},{_id:0}).pretty();
+db.student.find({subject: {$in:["Historia","Portugues"]}},{_id:0}).pretty();
+
+
+
